@@ -1,0 +1,12 @@
+name = "seeker"
+license = "MIT"
+licenselink = "https://github.com/pirsch-analytics/seeker/blob/master/LICENSE"
+description = "Our Hugo template for the Pirsch documentation. See https://docs.pirsch.io/."
+homepage = "https://docs.pirsch.io/"
+tags = []
+features = []
+min_version = "0.41.0"
+
+[author]
+  name = "Emvi Software GmbH"
+  homepage = "https://pirsch.io/"
