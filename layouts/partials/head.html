@@ -7,9 +7,9 @@
     {{$css := resources.Get "scss/main.scss" | resources.ToCSS $options}}
     <link rel="stylesheet" type="text/css" href="{{$css.RelPermalink}}" />
 
-    {{$options = (dict "targetPath" "main.js")}}
-    {{$js := resources.Get "js/menu.js" | js.Build $options}}
-    <script type="text/javascript" src="{{$js.RelPermalink}}"></script>
+    {{$options = (dict "targetPath" "menu.js")}}
+    {{$menu := resources.Get "js/menu.js" | js.Build $options}}
+    <script type="text/javascript" src="{{$menu.RelPermalink}}"></script>
     
     <title>{{.Page.Title}}</title>
 </head>

@@ -1,19 +1,30 @@
 {{define "tree-node"}}
     {{$page := .page}}
+    {{range .children}}
+        {{$hasChildren := (gt (len .Pages) 0)}}
 
-    <ul>
-        {{range .sections}}
-            <li class="menu-node {{if eq $page .}}active{{end}}">
+        <li class="menu-node {{if eq $page .}}active{{end}}">
+            {{if .IsSection}}
+                <span class="section">
+                    <i class="open">O</i>
+                    <i class="close hidden">C</i>
+                    {{.Title}}
+                </span>
+            {{else}}
                 <a href="{{.RelPermalink}}">{{.Title}}</a>
-                {{if gt (len .Pages) 0}}
-                    {{template "tree-node" dict "sections" .Pages "page" $page}}
-                {{end}}
-            </li>
-        {{end}}
-    </ul>
+            {{end}}
+
+            {{if $hasChildren}}
+                <ul class="{{if .IsSection}}hidden{{end}}">
+                    {{template "tree-node" dict "children" .Pages "page" $page}}
+                </ul>
+            {{end}}
+        </li>
+    {{end}}
 {{end}}
 
 <div class="menu">
-    {{$page := .}}
-    {{template "tree-node" dict "sections" .Site.Home.Sections "page" $page}}
+    <ul>
+        {{template "tree-node" dict "children" .Site.Home.Sections "page" .}}
+    </ul>
 </div>

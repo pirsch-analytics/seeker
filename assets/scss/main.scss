@@ -44,6 +44,15 @@ main {
     
                 li {
                     padding: 0 10px;
+
+                    .section {
+                        cursor: pointer;
+                        font-weight: bold;
+                    }
+                }
+
+                .hidden {
+                    display: none;
                 }
             }
         }
