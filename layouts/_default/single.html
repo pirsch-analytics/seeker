@@ -1,4 +1,7 @@
 {{define "main"}}
-    <h1>{{.Title}}</h1>
-    {{.Content}}
+    <div class="content-main">
+        <h1>{{.Title}}</h1>
+        <strong>{{.Date.Format "02. Jan, 2006"}}</strong>
+        {{.Content}}
+    </div>
 {{end}}

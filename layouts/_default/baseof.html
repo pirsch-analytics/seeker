@@ -6,9 +6,8 @@
         {{partial "header" .}}
         <div class="content">
             {{partial "menu" .}}
-            <div class="content-main">
-                {{block "main" .}}{{end}}
-            </div>
+            {{block "main" .}}{{end}}
+            {{partial "toc" .}}
         </div>
         {{partial "footer" .}}
     </main>

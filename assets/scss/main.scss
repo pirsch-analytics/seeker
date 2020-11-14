@@ -4,13 +4,10 @@
 
 html, body {
     margin: 0;
-    padding: 0;
+    padding: 20px;
 }
 
 main {
-    max-width: 1200px;
-    margin: 0 auto;
-
     header, footer {
         padding: 10px;
         display: flex;
@@ -34,6 +31,11 @@ main {
 
     .content {
         display: flex;
+        justify-content: space-between;
+
+        &-main {
+            max-width: 800px;
+        }
 
         .menu {
             margin: 0 20px 0 0;
@@ -54,6 +56,10 @@ main {
                 .hidden {
                     display: none;
                 }
+            }
+
+            .active {
+                font-weight: bold;
             }
         }
     }
