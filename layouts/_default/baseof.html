@@ -2,6 +2,15 @@
 <html lang="{{.Site.Language.Lang}}">
 {{partial "head" .}}
 <body>
-    {{block "main" .}}{{end}}
+    <main>
+        {{partial "header" .}}
+        <div class="content">
+            {{partial "menu" .}}
+            <div class="content-main">
+                {{block "main" .}}{{end}}
+            </div>
+        </div>
+        {{partial "footer" .}}
+    </main>
 </body>
 </html>

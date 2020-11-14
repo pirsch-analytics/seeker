@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    header, footer {
+        padding: 10px;
+        display: flex;
+        align-items: center;
+
+        .logo {
+            margin: 0 10px;
+        }
+
+        ul {
+            display: flex;
+            align-items: center;
+            padding: 0;
+            list-style: none;
+
+            li {
+                padding: 0 10px;
+            }
+        }
+    }
+
+    .content {
+        display: flex;
+
+        .menu {
+            margin: 0 20px 0 0;
+
+            ul {
+                padding: 0;
+                list-style: none;
+    
+                li {
+                    padding: 0 10px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+{{define "tree-node"}}
+    {{$page := .page}}
+
+    <ul>
+        {{range .sections}}
+            <li class="menu-node {{if eq $page .}}active{{end}}">
+                <a href="{{.RelPermalink}}">{{.Title}}</a>
+                {{template "tree-node" dict "sections" .Pages "page" $page}}
+            </li>
+        {{end}}
+    </ul>
+{{end}}
+
+<div class="menu">
+    {{$page := .}}
+    {{template "tree-node" dict "sections" .Site.Home.Sections "page" $page}}
+</div>

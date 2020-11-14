@@ -1,0 +1,10 @@
+<header>
+    <div class="logo">Pirsch</div>
+    <ul>
+        {{range .Site.Menus.main}}
+            <li>
+                <a href="{{.URL}}">{{.Name}}</a>
+            </li>
+        {{end}}
+    </ul>
+</header>
