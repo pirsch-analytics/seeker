@@ -3,7 +3,8 @@
     <ul>
         {{range .Site.Menus.main}}
             <li>
-                <a href="{{.URL}}">{{.Name}}</a>
+                {{.Pre}}
+                <a href="{{.URL}}" target="_blank">{{.Name}}</a>
             </li>
         {{end}}
     </ul>

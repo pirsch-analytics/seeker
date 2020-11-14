@@ -1,4 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const lists = document.querySelectorAll(".menu ul");
-    console.log(lists);
+    const active = document.querySelector(".menu .active");
+    console.log(active);
 });

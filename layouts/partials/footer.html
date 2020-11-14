@@ -1,8 +1,9 @@
 <footer>
+    <span>{{.Site.Params.copyright}}</span>
     <ul>
         {{range .Site.Menus.footer}}
             <li>
-                <a href="{{.URL}}">{{.Name}}</a>
+                <a href="{{.URL}}" target="_blank">{{.Name}}</a>
             </li>
         {{end}}
     </ul>

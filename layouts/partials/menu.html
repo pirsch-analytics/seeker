@@ -5,7 +5,9 @@
         {{range .sections}}
             <li class="menu-node {{if eq $page .}}active{{end}}">
                 <a href="{{.RelPermalink}}">{{.Title}}</a>
-                {{template "tree-node" dict "sections" .Pages "page" $page}}
+                {{if gt (len .Pages) 0}}
+                    {{template "tree-node" dict "sections" .Pages "page" $page}}
+                {{end}}
             </li>
         {{end}}
     </ul>
