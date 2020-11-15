@@ -6,7 +6,10 @@
         {{partial "header" .}}
         <div class="content">
             {{partial "menu" .}}
-            {{block "main" .}}{{end}}
+            <div class="content-main">
+                {{partial "breadcrumb" .}}
+                {{block "main" .}}{{end}}
+            </div>
             {{partial "toc" .}}
         </div>
         {{partial "footer" .}}

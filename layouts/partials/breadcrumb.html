@@ -1,0 +1,14 @@
+{{define "breadcrumb"}}
+    {{$parent := .page.Parent}}
+    
+    {{if $parent}}
+        {{$value := (printf "<a href='%s'>%s</a> &gt; %s" $parent.RelPermalink $parent.Title .value)}}
+        {{template "breadcrumb" dict "page" $parent "value" $value}}
+    {{else}}
+        {{.value | safeHTML}}
+    {{end}}
+{{end}}
+
+<div>
+    {{template "breadcrumb" dict "page" . "value" .Title}}
+</div>

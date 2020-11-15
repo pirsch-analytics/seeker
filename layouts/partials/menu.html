@@ -1,5 +1,6 @@
 {{define "tree-node"}}
     {{$page := .page}}
+    
     {{range .children}}
         {{$hasChildren := (gt (len .Pages) 0)}}
 
