@@ -25,11 +25,18 @@ function search(term) {
 }
 
 function performSearch(term) {
+    term = term.trim();
+    const output = document.getElementById("search-results");
+
+    if(!term) {
+        output.innerHTML = "";
+        return;
+    }
+
     searchTerm = null;
     const results = index.search(term);
     const resultTpl = document.getElementById("searchResult");
     const emptyTpl = document.getElementById("searchEmpty");
-    const output = document.getElementById("search-results");
 
     if(!results.length) {
         output.innerHTML = emptyTpl.innerHTML;
