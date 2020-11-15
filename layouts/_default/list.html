@@ -1,6 +1,9 @@
 {{define "main"}}
     <div class="content-main">
         <h1>{{.Title}}</h1>
+        <strong>{{.Date.Format "02. Jan, 2006"}}</strong>
+        {{.Content}}
+        
         {{range .Pages}}
             <div>
                 <h2><a href="{{.RelPermalink}}">{{.Title}}</a></h2>

@@ -1,23 +1,26 @@
 document.addEventListener("DOMContentLoaded", () => {
     // open active node
     const active = document.querySelector(".menu li.active");
-    let parent = active.parentElement;
 
-    while(parent && !parent.classList.contains("menu")) {
-        if(parent.tagName === "UL") {
-            parent.classList.remove("hidden");
-        }
-        else if(parent.tagName === "LI") {
-            const open = parent.querySelector(".open");
-            const close = parent.querySelector(".close");
+    if(active) {
+        let parent = active.parentElement;
 
-            if(open && close) {
-                open.classList.add("hidden");
-                close.classList.remove("hidden");
+        while(parent && !parent.classList.contains("menu")) {
+            if(parent.tagName === "UL") {
+                parent.classList.remove("hidden");
             }
+            else if(parent.tagName === "LI") {
+                const open = parent.querySelector(".open");
+                const close = parent.querySelector(".close");
+
+                if(open && close) {
+                    open.classList.add("hidden");
+                    close.classList.remove("hidden");
+                }
+            }
+            
+            parent = parent.parentElement;
         }
-        
-        parent = parent.parentElement;
     }
 
     // add toggle
