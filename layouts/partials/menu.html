@@ -25,6 +25,7 @@
 {{end}}
 
 <div class="menu">
+    {{partial "search" .}}
     <ul>
         {{template "tree-node" dict "children" .Site.Home.Sections "page" .}}
     </ul>
