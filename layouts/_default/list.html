@@ -1,11 +1,11 @@
 {{define "main"}}
     <h1>{{.Title}}</h1>
-    <strong>{{.Date.Format "02. Jan, 2006"}}</strong>
+    <small>{{.Date.Format "02. Jan, 2006"}}</small>
     {{.Content}}
     {{range .Pages}}
-        <div>
+        <div class="card">
             <h2><a href="{{.RelPermalink}}">{{.Title}}</a></h2>
-            <strong>{{.Date.Format "02. Jan, 2006"}}</strong>
+            <small>{{.Date.Format "02. Jan, 2006"}}</small>
             {{if .Description}}
                 <p>{{.Description}}</p>
             {{end}}

@@ -4,14 +4,14 @@
 <body>
     <main>
         {{partial "header" .}}
-        <div class="content">
+        <section class="layout">
             {{partial "menu" .}}
-            <div class="content-main">
+            <div class="content">
                 {{partial "breadcrumb" .}}
                 {{block "main" .}}{{end}}
             </div>
             {{partial "toc" .}}
-        </div>
+        </section>
         {{partial "footer" .}}
     </main>
 </body>
