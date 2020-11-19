@@ -9,6 +9,22 @@ document.addEventListener("DOMContentLoaded", () => {
     input.addEventListener("keyup", () => {
         searchDebounced(input.value);
     });
+
+    input.addEventListener("focus", () => {
+        const dropdown = document.getElementById("search-results");
+
+        if(dropdown) {
+            dropdown.style.visibility = "visible";
+        }
+    });
+
+    document.addEventListener("click", e => {
+        const dropdown = document.getElementById("search-results");
+
+        if(dropdown && e.target !== input && !dropdown.contains(e.target)) {
+            dropdown.style.visibility = "hidden";
+        }
+    });
 });
 
 function search(term) {
