@@ -41,6 +41,7 @@ header, footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    line-height: 1.2;
     z-index: 100;
     -webkit-backface-visibility: hidden;
 
@@ -204,8 +205,17 @@ section.layout {
         input {
             height: 40px;
             width: 100%;
-            padding: 8px 12px;
+            padding: 8px 36px 8px 12px;
             border-radius: 4px;
+        }
+
+        .search-clear {
+            position: absolute;
+            right: 12px;
+            font-size: 28px;
+            line-height: 40px;
+            color: var(--grey);
+            cursor: pointer;
         }
     
         .search-results {
