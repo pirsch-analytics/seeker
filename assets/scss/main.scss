@@ -37,23 +37,26 @@ h1,
 h2,
 h3,
 p {
-	margin-block-start: 0;
+    margin-block-start: 0;
     margin-block-end: 0;
 }
 
 h1 {
     font-size: 32px;
     font-weight: 500;
+    line-height: 1.2;
 }
 
 h2 {
     font-size: 24px;
     font-weight: 500;
+    line-height: 1.2;
 }
 
 h3 {
     font-size: 20px;
     font-weight: 500;
+    line-height: 1.2;
 }
 
 p {
@@ -193,13 +196,14 @@ section.layout {
     }
 
     @media only screen and (max-width: 1024px) {
+        min-height: calc(100vh - 128px);
         flex-direction: column;
         align-items: center;
+        padding-bottom: 24px;
 
         .menu {
             position: relative;
             top: 0;
-            margin-top: 24px;
         }
 
         .content {
@@ -313,6 +317,7 @@ section.layout {
 
 .breadcrumb {
     margin-bottom: 16px;
+    line-height: 1.5;
 }
 
 nav {
