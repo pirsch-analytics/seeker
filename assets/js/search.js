@@ -4,6 +4,7 @@ let searchTerm = null;
 
 document.addEventListener("DOMContentLoaded", () => {
     const input = document.getElementById("search");
+    const clear = document.getElementById("search-clear");
     const searchDebounced = debounce(search, 200);
 
     input.addEventListener("keyup", () => {
@@ -24,6 +25,10 @@ document.addEventListener("DOMContentLoaded", () => {
         if(dropdown && e.target !== input && !dropdown.contains(e.target)) {
             dropdown.style.visibility = "hidden";
         }
+    });
+
+    clear.addEventListener("click", () => {
+        input.value = "";
     });
 });
 
