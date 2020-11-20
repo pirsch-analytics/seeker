@@ -14,9 +14,7 @@ html {
 
     --grey: #7f7f7f;
     --dark-grey: #0f0f0f;
-    --green: #244233;
     --yellow: #ffbf00;
-    --red: #e05252;
 }
 
 body {
@@ -33,10 +31,7 @@ main {
     margin: 0 auto;
 }
 
-h1,
-h2,
-h3,
-p {
+h1, h2, h3, h4, h5, h6, p {
     margin-block-start: 0;
     margin-block-end: 0;
 }
@@ -59,6 +54,12 @@ h3 {
     line-height: 1.2;
 }
 
+h4, h5, h6 {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
 p {
     font-size: 18px;
     line-height: 1.5;
@@ -72,6 +73,33 @@ small {
     line-height: 1.5;
 }
 
+em {
+    font-style: italic;
+}
+
+strong {
+    font-weight: 500;
+}
+
+pre {
+    margin: 12px 0;
+    padding: 16px;
+    background: var(--dark-grey);
+    border-radius: 8px;
+    overflow-x: auto;
+
+    code {
+        background: none;
+    }
+}
+
+code {
+    padding: 4px 6px;
+    font-family: monospace;
+    background: var(--dark-grey);
+    border-radius: 4px;
+}
+
 a {
     font-size: inherit;
     font-weight: 400;
@@ -83,6 +111,64 @@ a {
     &:focus {
         text-decoration: underline;
     }
+}
+
+blockquote {
+    padding-left: 12px;
+    border-left: 2px solid var(--grey);
+}
+
+table {
+    margin: 0 auto !important;
+    border: 1px solid var(--grey);
+    border-collapse: separate;
+    border-spacing: 0;
+    table-layout: fixed;
+
+    td, th {
+        padding: 8px 12px;
+        border: 1px solid var(--grey);
+    }
+
+    th {
+        background: var(--dark-grey);
+    }
+}
+
+sub {
+    vertical-align: sub;
+    font-size: small;
+}
+
+sup {
+    vertical-align: super;
+    font-size: small;
+}
+
+abbr {
+    border-bottom: 1px dotted;
+    cursor: help;
+}
+
+kbd {
+    padding: 2px 3px;
+    font-size: small;
+    font-weight: 500;
+    background: var(--grey);
+    border-radius: 4px;
+}
+
+mark {
+    padding: 0 4px;
+    background: var(--yellow);
+    border-radius: 4px;
+}
+
+hr {
+    height: 1px;
+    margin: 24px 0;
+    background-color: var(--grey);
+    border: none;
 }
 
 header, footer {
@@ -157,7 +243,7 @@ section.layout {
             padding: 16px 0 8px;
         }
 
-        h3 {
+        h3, h4, h5, h6 {
             padding: 12px 0 8px;
         }
 
@@ -170,16 +256,24 @@ section.layout {
             padding-bottom: 12px;
         }
 
-        pre {
-            margin: 12px 0;
-            padding: 16px;
-            background: var(--dark-grey);
-            border-radius: 8px;
-            overflow-x: auto;
+        & > div {
+            margin: 24px 0;
+        }
 
-            code {
-                font-family: monospace;
-            }
+        li {
+            line-height: 1.5;
+        }
+        
+        ol {
+            margin: 8px 0;
+            padding-left: 16px;
+            list-style-type: decimal;
+        }
+        
+        ul {
+            margin: 8px 0;
+            padding-left: 16px;
+            list-style-type: disc;
         }
 
         .card {
@@ -260,6 +354,12 @@ section.layout {
                 font-size: 16px;
                 line-height: 1.5;
             }
+
+            .active {
+                font-weight: 400;
+                color: white;
+                text-decoration: underline;
+            }
         }
     }
 
@@ -316,6 +416,7 @@ section.layout {
 }
 
 .breadcrumb {
+    display: block;
     margin-bottom: 16px;
     line-height: 1.5;
 }
@@ -339,5 +440,32 @@ nav {
 
     @media only screen and (max-width: 1200px) {
         display: none;
+    }
+}
+
+@media only screen and (min-width: 512px) {
+    body {
+        *::-webkit-scrollbar {
+            height: 16px;
+            width: 16px;
+        }
+    
+        *::-webkit-scrollbar-thumb {
+            height: 64px;
+            width: 64px;
+            background-color: rgba(127,127,127,.5);
+            border: 5px solid rgba(0,0,0,0);
+            background-clip: padding-box;
+            -webkit-border-radius: 8px;
+        }
+        
+        *::-webkit-scrollbar-button {
+            height: 0;
+            width: 0;
+            display: none;
+        }
+        *::-webkit-scrollbar-corner {
+            background-color: transparent;
+        }
     }
 }
