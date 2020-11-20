@@ -1,14 +1,36 @@
 let index = null;
 let lookup = null;
 let searchTerm = null;
+let activeResult = 0;
 
 document.addEventListener("DOMContentLoaded", () => {
     const input = document.getElementById("search");
     const clear = document.getElementById("search-clear");
     const searchDebounced = debounce(search, 200);
+    let currentInput = "";
+
+    input.addEventListener("keydown", e => {
+        if(e.key === "ArrowDown") {
+            e.preventDefault();
+            selectResult(1);
+        }
+        else if(e.key === "ArrowUp") {
+            e.preventDefault();
+            selectResult(-1);
+        }
+        else if(e.key === "Enter") {
+            openResult();
+        }
+        else if(e.key === "Escape") {
+            clearInput();
+        }
+    });
 
     input.addEventListener("keyup", () => {
-        searchDebounced(input.value);
+        if(input.value !== currentInput) {
+            currentInput = input.value;
+            searchDebounced(input.value);
+        }
     });
 
     input.addEventListener("focus", () => {
@@ -28,9 +50,47 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     clear.addEventListener("click", () => {
-        input.value = "";
+        clearInput();
     });
+
+    function clearInput() {
+        input.value = "";
+    }
 });
+
+function selectResult(direction) {
+    const results = document.querySelectorAll("#search-results a");
+    
+    if(direction === 0 || results.length === 0) {
+        activeResult = 0;
+    }
+    else {
+        activeResult += direction;
+
+        if(activeResult < 0) {
+            activeResult = results.length-1;
+        }
+        else if(activeResult > results.length-1) {
+            activeResult = 0;
+        }
+    }
+
+    if(results.length) {
+        for(let i = 0; i < results.length; i++) {
+            results[i].classList.remove("active");
+        }
+
+        results[activeResult].classList.add("active");
+    }
+}
+
+function openResult() {
+    const results = document.querySelectorAll("#search-results a");
+
+    if(results) {
+        location.href = results[activeResult].href;
+    }
+}
 
 function search(term) {
     if(index) {
@@ -73,6 +133,8 @@ function performSearch(term) {
             output.appendChild(element);
         }
     }
+
+    selectResult(0);
 }
 
 function loadIndex() {
