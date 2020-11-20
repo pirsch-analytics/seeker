@@ -17,7 +17,7 @@ You can freely use and modify this theme.
 
 ### Favicon
 
-To use a different favicon, place a `.png` inside the `static` directory of your site.
+To use a different favicon, place the `favicon.png` inside the `static` directory of your site.
 
 ### Texts
 
