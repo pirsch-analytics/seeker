@@ -1,4 +1,4 @@
-# seeker
+# Seeker
 
 Our Hugo template for the Pirsch documentation. See https://docs.pirsch.io/.
 
