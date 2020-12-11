@@ -194,7 +194,7 @@ header {
         transition: color .1s ease;
 
         &:hover {
-            color: var(--grey);
+            color: var(--yellow);
             text-decoration: none;
         }
     }
@@ -353,12 +353,11 @@ section.layout {
     
         .search-results {
             position: absolute;
-            top: calc(100% + 4px);
+            top: calc(100% + 8px);
             right: 0;
             left: 0;
             background: var(--dark-grey);
             border-radius: 4px;
-            box-shadow: 0 0 0 2px rgba(127,127,127,.4);
     
             a, p {
                 display: block;
