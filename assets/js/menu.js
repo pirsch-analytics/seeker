@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const active = document.querySelector(".menu li.active");
 
     if(active) {
+        // expand parents
         let parent = active.parentElement;
 
         while(parent && !parent.classList.contains("menu")) {
@@ -10,38 +11,48 @@ document.addEventListener("DOMContentLoaded", () => {
                 parent.classList.remove("hidden");
             }
             else if(parent.tagName === "LI") {
-                const open = parent.querySelector(".open");
-                const close = parent.querySelector(".close");
+                const icon = parent.querySelector(".icon");
 
-                if(open && close) {
-                    open.classList.add("hidden");
-                    close.classList.remove("hidden");
+                if(icon) {
+                    icon.classList.toggle("open");
                 }
             }
             
             parent = parent.parentElement;
         }
-    }
+        
+        // show children
+        let children = active.children;
+        
+        for(let i = 0; i < children.length; i++) {
+            children[i].classList.remove("hidden");
+        }
 
-    // add toggle
-    const li = document.querySelectorAll(".menu li");
+        // rotate icon
+        const icon = active.querySelector(".icon")
+
+        if(icon) {
+            icon.classList.toggle("open");
+        }
+
+        // add toggle
+        const li = document.querySelectorAll(".menu li");
+        
+        for(let i = 0; i < li.length; i++) {
+            const icon = li[i].querySelector(".icon");
+
+            if(icon) {
+                icon.addEventListener("click", e => {
+                    e.stopPropagation();
+                    const ul = li[i].querySelector("ul");
     
-    for(let i = 0; i < li.length; i++) {
-        li[i].addEventListener("click", e => {
-            e.stopPropagation();
-            const ul = li[i].querySelector("ul");
+                    if(ul) {
+                        ul.classList.toggle("hidden");
+                    }
 
-            if(ul) {
-                ul.classList.toggle("hidden");
+                    icon.classList.toggle("open");
+                });
             }
-
-            const open = li[i].querySelector(".open");
-            const close = li[i].querySelector(".close");
-
-            if(open && close) {
-                open.classList.toggle("hidden");
-                close.classList.toggle("hidden");
-            }
-        });
+        }
     }
 });

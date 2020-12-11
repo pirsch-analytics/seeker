@@ -109,7 +109,7 @@ a {
 
     &:hover,
     &:focus {
-        text-decoration: underline;
+        color: #ffd966;;
     }
 }
 
@@ -209,7 +209,6 @@ header {
                 font-size: 16px;
                 font-weight: 500;
                 color: white;
-                transition: color .1s ease;
 
                 &:hover, &:focus {
                     color: var(--yellow);
@@ -229,7 +228,7 @@ section.layout {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    padding-bottom: 256px;
+    padding-bottom: 128px;
 
     .content {
         width: 100%;
@@ -279,14 +278,23 @@ section.layout {
         }
 
         .card {
+            max-width: 512px;
+            display: block;
             margin: 24px 0;
+            padding: 24px 24px 20px;
+            background-color: var(--dark-grey);
+            border-radius: 8px;
 
-            h2 {
-                padding-bottom: 8px;
+            h3 {
+                padding: 0 0 8px;
             }
         
             p, small {
                 padding: 0;
+            }
+
+            p:last-of-type {
+                margin-bottom: 0;
             }
         }
     }
@@ -310,6 +318,11 @@ section.layout {
     @media only screen and (max-width: 512px) {
         .menu {
             max-width: 100%;
+        }
+        
+        .content .card {
+            margin: 16px 0;
+            padding: 16px;
         }
     }
 }
@@ -366,11 +379,19 @@ section.layout {
                 margin: 12px;
                 font-size: 16px;
                 line-height: 1.5;
+                color: white;
+            }
+
+            a:hover {
+                color: var(--yellow);
             }
 
             .active {
-                font-weight: 400;
-                text-decoration: underline;
+                color: var(--yellow);
+
+                &:hover, &:focus {
+                    color: #ffd966;
+                }
             }
         }
     }
@@ -379,28 +400,32 @@ section.layout {
         display: flex;
         align-items: center;
         margin: 16px 0;
-        font-size: 18px;
-        font-weight: 500;
         cursor: pointer;
 
         i {
-            display: block;
-            height: 0;
-            width: 0;
+            position: relative;
+            margin: 0 8px;
+            border-top: 4px solid transparent;
+            border-left: 4px solid white;
+            border-bottom: 4px solid transparent;
 
-            &.close {
-                margin-right: 8px;
-                border-top: 4px solid white;
-                border-right: 4px solid transparent;
-                border-left: 4px solid transparent;
+            &::before { // Larger click target.
+                content: "";
+                position: absolute;
+                top: -8px;
+                left: -10px;
+                height: 16px;
+                width: 16px;
             }
 
             &.open {
-                margin: 0 10px 0 2px;
-                border-top: 4px solid transparent;
-                border-left: 4px solid white;
-                border-bottom: 4px solid transparent;
+                transform: rotate(90deg);
             }
+        }
+
+        a {
+            font-size: 18px;
+            font-weight: 500;
         }
     }
 
@@ -415,11 +440,20 @@ section.layout {
 
         a {
             line-height: 1.5;
+            color: white;
+
+            &:hover, &:focus {
+                color: var(--yellow);
+            }
         }
     }
 
-    .active, .active * {
-        font-weight: 500;
+    .active > .section > a, .active > a {
+        color: var(--yellow);
+
+        &:hover, &:focus {
+            color: #ffd966;
+        }
     }
 
     .hidden {
@@ -507,7 +541,6 @@ footer {
         line-height: 1.2;
         color: white;
         white-space: nowrap;
-        transition: color .1s ease;
 
         &:hover,
         &:focus {

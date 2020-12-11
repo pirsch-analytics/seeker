@@ -7,9 +7,8 @@
         <li class="menu-node {{if eq $page .}}active{{end}}">
             {{if .IsSection}}
                 <span class="section">
-                    <i class="open"></i>
-                    <i class="close hidden"></i>
-                    {{.Title}}
+                    <i class="icon"></i>
+                    <a href="{{.RelPermalink}}">{{.Title}}</a>
                 </span>
             {{else}}
                 <a href="{{.RelPermalink}}">{{.Title}}</a>
