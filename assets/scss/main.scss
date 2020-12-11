@@ -356,20 +356,21 @@ section.layout {
             top: calc(100% + 4px);
             right: 0;
             left: 0;
-            color: white;
             background: var(--dark-grey);
             border-radius: 4px;
+            box-shadow: 0 0 0 2px rgba(127,127,127,.4);
     
             a, p {
                 display: block;
                 margin: 12px;
                 font-size: 16px;
+                font-weight: 500;
                 line-height: 1.5;
             }
 
             .active {
                 font-weight: 400;
-                color: var(--yellow);
+                color: white;
             }
         }
     }
@@ -489,7 +490,7 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 128px -16px 0;
+    margin: 0 -16px;
     z-index: 100;
     overflow-x: auto;
 
@@ -511,6 +512,7 @@ footer {
         &:hover,
         &:focus {
             color: var(--yellow);
+            text-decoration: none;
         }
     }
 
