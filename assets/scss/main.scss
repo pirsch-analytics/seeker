@@ -171,7 +171,7 @@ hr {
     border: none;
 }
 
-header, footer {
+header {
     height: 96px;
     width: 100%;
     min-width: 320px;
@@ -191,9 +191,10 @@ header, footer {
         letter-spacing: -1px;
         color: white;
         white-space: nowrap;
+        transition: color .1s ease;
 
         &:hover {
-            color: var(--yellow);
+            color: var(--grey);
             text-decoration: none;
         }
     }
@@ -205,9 +206,10 @@ header, footer {
             margin-left: 48px;
 
             a {
-            font-size: 16px;
-            font-weight: 500;
-            color: white;
+                font-size: 16px;
+                font-weight: 500;
+                color: white;
+                transition: color .1s ease;
 
                 &:hover, &:focus {
                     color: var(--yellow);
@@ -329,6 +331,15 @@ section.layout {
             width: 100%;
             padding: 8px 36px 8px 12px;
             border-radius: 4px;
+            transition: box-shadow .1s ease;
+
+            &:hover {
+                box-shadow: 0 0 0 2px var(--grey);
+            }
+
+            &:focus {
+                box-shadow: 0 0 0 2px var(--yellow);
+            }
         }
 
         .search-clear {
@@ -345,6 +356,7 @@ section.layout {
             top: calc(100% + 4px);
             right: 0;
             left: 0;
+            color: white;
             background: var(--dark-grey);
             border-radius: 4px;
     
@@ -357,8 +369,7 @@ section.layout {
 
             .active {
                 font-weight: 400;
-                color: white;
-                text-decoration: underline;
+                color: var(--yellow);
             }
         }
     }
@@ -467,5 +478,52 @@ nav {
         *::-webkit-scrollbar-corner {
             background-color: transparent;
         }
+    }
+}
+
+footer {
+    height: 96px;
+    width: calc(100% + 32px);
+    min-width: 320px;
+    max-width: calc(100% + 32px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 128px -16px 0;
+    z-index: 100;
+    overflow-x: auto;
+
+    & > *:first-child {
+        padding-left: 16px;
+    }
+
+    & > *:last-child {
+        padding-right: 16px;
+    }
+
+    a {
+        font-weight: 500;
+        line-height: 1.2;
+        color: white;
+        white-space: nowrap;
+        transition: color .1s ease;
+
+        &:hover,
+        &:focus {
+            color: var(--yellow);
+        }
+    }
+
+    ul {
+        display: flex;
+
+        li {
+            margin-left: 24px;
+            white-space: nowrap;
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        height: 64px;
     }
 }
