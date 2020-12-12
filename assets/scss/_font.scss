@@ -26,14 +26,13 @@
 }
 
 @font-face {
-  font-family: "DM Sans";
-  src: url("/fonts/DMSans-Bold.ttf");
-  font-weight: 700;
+  font-family: "DM Mono";
+  src: url("/fonts/DMMono-Regular.ttf");
+  font-weight: 400;
 }
 
 @font-face {
-  font-family: "DM Sans";
-  src: url("/fonts/DMSans-BoldItalic.ttf");
-  font-weight: 700;
-  font-style: italic;
+  font-family: "DM Mono";
+  src: url("/fonts/DMMono-Medium.ttf");
+  font-weight: 500;
 }

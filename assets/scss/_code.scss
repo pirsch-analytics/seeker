@@ -1,0 +1,255 @@
+pre {
+    margin: 32px 0;
+    padding: 16px;
+    background: var(--dark-grey);
+    border-radius: 8px;
+    overflow-x: auto;
+
+    code {
+        background: none;
+    }
+}
+
+code {
+    font-family: "DM Mono", monospace;
+    font-size: 16px;
+    line-height: 1.4;
+    background: var(--dark-grey);
+    border-radius: 4px;
+}
+
+/* Background */
+.chroma {
+    --error: var(--red);
+    --operator: red;
+    --keyword: #ffb48e;
+    --variables: #0cf;
+    --attribute: var(--yellow);
+    --o: var(--grey);
+    --p: var(--grey);
+}
+/* Error */
+.chroma .err {
+    color: var(--error);
+}
+/* LineTableTD */
+.chroma .lntd {
+    vertical-align: top;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+/* LineTable */
+.chroma .lntable {
+    border-spacing: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    width: auto;
+    overflow: auto;
+    display: block;
+}
+/* LineHighlight */
+.chroma .hl {
+    display: block;
+    width: 100%;
+    background-color: #ffffcc;
+}
+/* LineNumbersTable */
+.chroma .lnt {
+    margin-right: 0.4em;
+    padding: 0 0.4em 0 0.4em;
+    color: #727272;
+}
+/* LineNumbers */
+.chroma .ln {
+    margin-right: 0.4em;
+    padding: 0 0.4em 0 0.4em;
+    color: #727272;
+}
+/* Keyword */
+.chroma .k,
+.chroma .keyword {
+    color: var(--red);
+}
+/* KeywordConstant */
+.chroma .kc {
+    color: #0cf;;
+}
+/* KeywordDeclaration */
+.chroma .kd {
+    color: var(--red);
+}
+/* KeywordNamespace */
+.chroma .kn {
+    color: #ffffff;
+}
+/* KeywordPseudo */
+.chroma .kp {
+    color: #ffffff;
+}
+/* KeywordReserved */
+.chroma .kr {
+    color: #ff7c3b;
+}
+/* KeywordType */
+.chroma .kt {
+    color: #ffffff;
+}
+/* NameAttribute */
+.chroma .na,
+.chroma .attr-value {
+    color: var(--red);
+}
+/* NameBuiltin */
+.chroma .nb {
+    /*color: #ffffff;*/
+}
+/* NameTag */
+.chroma .nt,
+.chroma .tag {
+    color: var(--variables);
+}
+/* LiteralDate */
+.chroma .ld {
+    color: #ffff00;
+}
+/* LiteralString */
+.chroma .s,
+.chroma .string {
+    color: var(--yellow);
+    /*color: #00ffff;*/
+}
+/* LiteralStringAffix */
+.chroma .sa {
+    color: var(--red);
+}
+/* LiteralStringBacktick */
+.chroma .sb {
+    color: var(--grey);
+}
+/* LiteralStringChar */
+.chroma .sc {
+    color: var(--red);
+}
+/* LiteralStringDelimiter */
+.chroma .dl {
+    color: var(--red);
+}
+/* LiteralStringDoc */
+.chroma .sd {
+    color: var(--red);
+}
+/* LiteralStringDouble */
+.chroma .s2 {
+    /*	color: #00ffff;*/
+}
+/* LiteralStringEscape */
+.chroma .se {
+    color: #00ffff;
+}
+/* LiteralStringHeredoc */
+.chroma .sh {
+    color: #00ffff;
+}
+/* LiteralStringInterpol */
+.chroma .si {
+    color: var(--grey);
+    /*color: #00ffff;*/
+}
+/* LiteralStringOther */
+.chroma .sx {
+    color: #00ffff;
+}
+/* LiteralStringRegex */
+.chroma .sr {
+    color: #00ffff;
+}
+/* LiteralStringSingle */
+.chroma .s1 {
+    color: var(--red);
+}
+/* LiteralStringSymbol */
+.chroma .ss {
+    color: var(--red);
+}
+/* LiteralNumber */
+.chroma .m {
+    color: var(--red);
+}
+/* LiteralNumberBin */
+.chroma .mb {
+    color: var(--red);
+}
+/* LiteralNumberFloat */
+.chroma .mf {
+    color: var(--red);
+}
+/* LiteralNumberHex */
+.chroma .mh {
+    color: var(--red);
+}
+/* LiteralNumberInteger */
+.chroma .mi {
+    color: var(--red);
+}
+/* LiteralNumberIntegerLong */
+.chroma .il {
+    color: var(--red);
+}
+/* LiteralNumberOct */
+.chroma .mo {
+    color: var(--red);
+}
+/* Comment */
+.chroma .c {
+    color: var(--grey);
+}
+/* CommentHashbang */
+.chroma .ch {
+    color: var(--grey);
+}
+/* CommentMultiline */
+.chroma .cm {
+    color: var(--grey);
+}
+/* CommentSingle */
+.chroma .c1 {
+    color: var(--grey);
+}
+/* CommentSpecial */
+.chroma .cs {
+    color: var(--grey);
+}
+/* CommentPreproc */
+.chroma .cp {
+    color: var(--red);
+}
+/* CommentPreprocFile */
+.chroma .cpf {
+    color: #00ff00;
+}
+/* GenericHeading */
+.chroma .gh {
+}
+/* GenericStrong */
+.chroma .gs {
+}
+/* GenericSubheading */
+.chroma .gu {
+}
+/* GenericUnderline */
+.chroma .gl {
+    text-decoration: underline;
+}
+
+/* Operator */
+.chroma .o,
+.chroma .operator {
+    color: var(--o);
+}
+
+.chroma .p,
+.chroma .parameter {
+    color: var(--p);
+}
