@@ -232,22 +232,24 @@ section.layout {
 
         h1 {
             padding-bottom: 12px;
-
-            & + small + * {
-                margin-top: 16px;
-            }
         }
 
         h2 {
-            margin: 32px 0 16px;
+            padding: 32px 0 16px;
+            margin: -16px 0;
         }
 
         h3, h4, h5, h6 {
-            margin: 24px 0 12px;
+            padding: 24px 0 12px;
+            margin: -12px 0;
         }
 
         p {
             margin: 16px 0;
+        }
+
+        a > img {
+            margin: 0;
         }
 
         small {
@@ -256,7 +258,7 @@ section.layout {
         }
 
         & > div {
-            margin: 24px 0;
+            margin: 32px 0;
         }
 
         li {
@@ -286,7 +288,8 @@ section.layout {
             border-radius: 8px;
 
             h3 {
-                margin: 0 0 8px;
+                margin: 0;
+                padding: 0 0 8px;
             }
         
             p, small {

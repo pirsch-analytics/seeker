@@ -1,9 +1,5 @@
 pre {
-    margin: 32px 0;
-    padding: 16px;
-    background: var(--dark-grey);
-    border-radius: 8px;
-    overflow-x: auto;
+    padding: 0;
 
     code {
         background: none;
@@ -13,13 +9,13 @@ pre {
 code {
     font-family: "DM Mono", monospace;
     font-size: 16px;
-    line-height: 1.4;
+    line-height: 1.5;
     background: var(--dark-grey);
     border-radius: 4px;
 }
 
 /* Background */
-.chroma {
+div.chroma {
     --error: var(--red);
     --operator: red;
     --keyword: #ffb48e;
@@ -27,6 +23,11 @@ code {
     --attribute: var(--yellow);
     --o: var(--grey);
     --p: var(--grey);
+
+    padding: 24px 0;
+    background-color: var(--dark-grey);
+    border-radius: 8px;
+    overflow-x: auto;
 }
 /* Error */
 .chroma .err {
@@ -46,8 +47,17 @@ code {
     margin: 0;
     border: 0;
     width: auto;
-    overflow: auto;
     display: block;
+
+    td:first-of-type {
+        border-right: 1px solid var(--grey);
+        padding-left: 16px;
+        user-select: none;
+    }
+
+    td:nth-of-type(2){
+        padding: 0 24px 0 15px;
+    }
 }
 /* LineHighlight */
 .chroma .hl {
@@ -57,24 +67,22 @@ code {
 }
 /* LineNumbersTable */
 .chroma .lnt {
-    margin-right: 0.4em;
-    padding: 0 0.4em 0 0.4em;
-    color: #727272;
+    margin-right: 3px;
+    padding: 0 7px;
+    color: var(--grey);
 }
 /* LineNumbers */
 .chroma .ln {
-    margin-right: 0.4em;
-    padding: 0 0.4em 0 0.4em;
-    color: #727272;
+    color: var(--grey);
 }
 /* Keyword */
 .chroma .k,
 .chroma .keyword {
-    color: var(--red);
+    color: #0cf;
 }
 /* KeywordConstant */
 .chroma .kc {
-    color: #0cf;;
+    color: #0cf;
 }
 /* KeywordDeclaration */
 .chroma .kd {
@@ -99,7 +107,7 @@ code {
 /* NameAttribute */
 .chroma .na,
 .chroma .attr-value {
-    color: var(--red);
+    color: var(--yellow);
 }
 /* NameBuiltin */
 .chroma .nb {
@@ -117,7 +125,7 @@ code {
 /* LiteralString */
 .chroma .s,
 .chroma .string {
-    color: var(--yellow);
+    color: var(--red);
     /*color: #00ffff;*/
 }
 /* LiteralStringAffix */
