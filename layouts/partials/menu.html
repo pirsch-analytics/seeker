@@ -11,7 +11,9 @@
                     <a href="{{.RelPermalink}}">{{.Title}}</a>
                 </span>
             {{else}}
-                <a href="{{.RelPermalink}}">{{.Title}}</a>
+                <span class="page">
+                    <a href="{{.RelPermalink}}">{{.Title}}</a>
+                </span>
             {{end}}
 
             {{if $hasChildren}}
@@ -27,7 +29,7 @@
     {{partial "search" .}}
     {{if .Site.Home}}
         <ul>
-            {{template "tree-node" dict "children" .Site.Home.Sections "page" .}}
+            {{template "tree-node" dict "children" .Site.Home.Pages "page" .}}
         </ul>
     {{end}}
 </div>
