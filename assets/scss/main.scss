@@ -235,8 +235,11 @@ section.layout {
         }
 
         h2 {
-            padding: 32px 0 16px;
-            margin: -16px 0;
+            padding: 8px 0;
+            margin: 32px 0 16px 0;
+            border-width: 0 0 1px 0;
+            border-style: solid;
+            border-color: var(--grey);
         }
 
         h3, h4, h5, h6 {
