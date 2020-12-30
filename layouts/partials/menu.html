@@ -7,7 +7,7 @@
         <li class="menu-node {{if eq $page .}}active{{end}}">
             {{if .IsSection}}
                 <span class="section">
-                    <i class="icon"></i>
+                    <i class="icon open"></i>
                     <a href="{{.RelPermalink}}">{{.Title}}</a>
                 </span>
             {{else}}
@@ -17,7 +17,7 @@
             {{end}}
 
             {{if $hasChildren}}
-                <ul class="{{if .IsSection}}hidden{{end}}">
+                <ul>
                     {{template "tree-node" dict "children" .Pages "page" $page}}
                 </ul>
             {{end}}

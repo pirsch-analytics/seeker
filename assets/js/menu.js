@@ -3,38 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const active = document.querySelector(".menu li.active");
 
     if(active) {
-        // expand parents
-        let parent = active.parentElement;
-
-        while(parent && !parent.classList.contains("menu")) {
-            if(parent.tagName === "UL") {
-                parent.classList.remove("hidden");
-            }
-            else if(parent.tagName === "LI") {
-                const icon = parent.querySelector(".icon");
-
-                if(icon) {
-                    icon.classList.toggle("open");
-                }
-            }
-            
-            parent = parent.parentElement;
-        }
-        
-        // show children
-        let children = active.children;
-        
-        for(let i = 0; i < children.length; i++) {
-            children[i].classList.remove("hidden");
-        }
-
-        // rotate icon
-        const icon = active.querySelector(".icon")
-
-        if(icon) {
-            icon.classList.toggle("open");
-        }
-
         // add toggle
         const li = document.querySelectorAll(".menu li");
         

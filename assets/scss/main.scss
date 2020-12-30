@@ -235,16 +235,16 @@ section.layout {
         }
 
         h2 {
-            padding: 8px 0;
-            margin: 32px 0 16px 0;
+            margin-bottom: 16px;
+            padding: 32px 0 8px;
             border-width: 0 0 1px 0;
             border-style: solid;
             border-color: var(--grey);
         }
 
         h3, h4, h5, h6 {
-            padding: 24px 0 12px;
             margin: -12px 0;
+            padding: 24px 0 12px;
         }
 
         p {
@@ -406,8 +406,7 @@ section.layout {
     .section {
         display: flex;
         align-items: center;
-        margin: 16px 0;
-        cursor: pointer;
+        margin: 16px 0 8px;
 
         i {
             position: relative;
@@ -415,6 +414,7 @@ section.layout {
             border-top: 4px solid transparent;
             border-left: 4px solid white;
             border-bottom: 4px solid transparent;
+            cursor: pointer;
 
             &::before { // Larger click target.
                 content: "";
@@ -439,20 +439,23 @@ section.layout {
     .page {
         display: flex;
         align-items: center;
-        margin: 16px 0;
         padding: 0 0 0 20px;
-        cursor: pointer;
-
-        a {
-            font-size: 18px;
-            font-weight: 500;
-        }
     }
 
     .menu-node {
         & > ul {
             margin-left: 20px;
+
+            & > li {
+                font-size: 16px;
+                font-weight: 400;
+            }
         }
+    }
+
+    & > ul > li > span.page > a {
+        font-size: 18px;
+        font-weight: 500;
     }
 
     li {
@@ -468,7 +471,7 @@ section.layout {
         }
     }
 
-    .active > .section > a, .active > a {
+    .active > .section > a, .active > span > a {
         color: var(--yellow);
 
         &:hover, &:focus {
