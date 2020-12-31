@@ -16,4 +16,10 @@
     </title>
     <script src="{{$lunr.RelPermalink}}"></script>
     <script type="text/javascript" src="{{$js.RelPermalink}}"></script>
+    
+    {{if .Site.Params.pirsch}}
+        <script type="text/javascript" src="https://api.pirsch.io/pirsch.js" 
+            id="pirschjs" 
+            data-code="{{.Site.Params.pirsch}}"></script>
+    {{end}}
 </head>

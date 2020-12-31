@@ -21,12 +21,13 @@ To use a different favicon, place the `favicon.png` inside the `static` director
 
 ### Texts
 
-To change the title and copyright texts, set these two parameters inside your `config.toml`:
+To change the title, copyright texts, and copyright URL, set these parameters inside your `config.toml`:
 
 ```toml
 [params]
     title = "Title"
     copyright = "Copyright"
+    url = "https://example.com/"
 ```
 
 ### Navigation
@@ -64,6 +65,15 @@ mediaType = "application/json"
 
 [outputs]
 home = ["HTML", "RSS", "SearchIndex"] # "SearchIndex" needs to be added, HTML and RSS are the default
+```
+
+## Web Analytics
+
+You can use [Pirsch](https://pirsch.io/) for web analytics be providing the identification code in the `config.toml`:
+
+```toml
+[params]
+    pirsch = "identification_code"
 ```
 
 ## License
