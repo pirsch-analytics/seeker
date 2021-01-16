@@ -1,1 +1,5 @@
-{{.TableOfContents}}
+{{if .TableOfContents}}
+    {{.TableOfContents}}
+{{else}}
+    <nav id="TableOfContents"></nav>
+{{end}}
