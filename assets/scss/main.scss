@@ -36,7 +36,7 @@ body {
 }
 
 main {
-    width: 1440px;
+    width: 1200px;
     max-width: calc(100% - 32px);
     margin: 0 auto;
 }
@@ -234,9 +234,9 @@ section.layout {
 
     .content {
         width: 100%;
-        max-width: 768px;
+        max-width: 640px;
         flex: 1;
-        margin: 0 24px;
+        margin: 0 48px;
 
         h1 {
             padding-bottom: 12px;
@@ -326,7 +326,7 @@ section.layout {
         }
 
         .content {
-            margin-top: 24px;
+            margin: 24px 16px;
         }
     }
 
@@ -347,7 +347,7 @@ section.layout {
     top: 48px;
     width: 100%;
     max-width: 256px;
-    min-width: 192px;
+    min-width: 256px;
     user-select: none;
 
     .search {
@@ -388,7 +388,7 @@ section.layout {
     
         .search-results {
             position: absolute;
-            top: calc(100% + 8px);
+            top: calc(100% + 6px);
             right: 0;
             left: 0;
             background: var(--grey-700);
@@ -397,10 +397,14 @@ section.layout {
     
             a, p {
                 display: block;
-                margin: 12px;
+                margin: 8px 12px;
                 font-size: 16px;
                 line-height: 1.5;
                 color: white;
+            }
+
+            p {
+                color: var(--grey-500);
             }
 
             a:hover {
