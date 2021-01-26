@@ -10,8 +10,8 @@ code {
     font-family: "DM Mono", monospace;
     font-size: 16px;
     line-height: 1.5;
-    background: var(--dark-grey);
-    border-radius: 4px;
+    background: var(--grey-800);
+    border-radius: 6px;
 }
 
 /* Background */
@@ -21,12 +21,12 @@ div.chroma {
     --keyword: #ffb48e;
     --variables: #0cf;
     --attribute: var(--yellow);
-    --o: var(--grey);
-    --p: var(--grey);
+    --o: var(--grey-500);
+    --p: var(--grey-500);
 
     padding: 24px 0;
-    background-color: var(--dark-grey);
-    border-radius: 8px;
+    background-color: var(--grey-800);
+    border-radius: 12px;
     overflow-x: auto;
 }
 /* Error */
@@ -50,7 +50,7 @@ div.chroma {
     display: block;
 
     td:first-of-type {
-        border-right: 1px solid var(--grey);
+        border-right: 1px solid var(--grey-500);
         padding-left: 16px;
         user-select: none;
     }
@@ -69,11 +69,11 @@ div.chroma {
 .chroma .lnt {
     margin-right: 3px;
     padding: 0 7px;
-    color: var(--grey);
+    color: var(--grey-500);
 }
 /* LineNumbers */
 .chroma .ln {
-    color: var(--grey);
+    color: var(--grey-500);
 }
 /* Keyword */
 .chroma .k,
@@ -134,7 +134,7 @@ div.chroma {
 }
 /* LiteralStringBacktick */
 .chroma .sb {
-    color: var(--grey);
+    color: var(--grey-500);
 }
 /* LiteralStringChar */
 .chroma .sc {
@@ -162,7 +162,7 @@ div.chroma {
 }
 /* LiteralStringInterpol */
 .chroma .si {
-    color: var(--grey);
+    color: var(--grey-500);
     /*color: #00ffff;*/
 }
 /* LiteralStringOther */
@@ -211,23 +211,23 @@ div.chroma {
 }
 /* Comment */
 .chroma .c {
-    color: var(--grey);
+    color: var(--grey-500);
 }
 /* CommentHashbang */
 .chroma .ch {
-    color: var(--grey);
+    color: var(--grey-500);
 }
 /* CommentMultiline */
 .chroma .cm {
-    color: var(--grey);
+    color: var(--grey-500);
 }
 /* CommentSingle */
 .chroma .c1 {
-    color: var(--grey);
+    color: var(--grey-500);
 }
 /* CommentSpecial */
 .chroma .cs {
-    color: var(--grey);
+    color: var(--grey-500);
 }
 /* CommentPreproc */
 .chroma .cp {
