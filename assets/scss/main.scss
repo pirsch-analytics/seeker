@@ -96,6 +96,7 @@ img {
     display: block;
     margin: 32px 0;
     border-radius: 12px;
+    cursor: pointer;
 }
 
 a {
@@ -171,6 +172,24 @@ hr {
     margin: 24px 0;
     background-color: var(--grey-500);
     border: none;
+}
+
+.img-overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    img {
+        max-width: 80%;
+        max-height: 80%;
+    }
 }
 
 header {
