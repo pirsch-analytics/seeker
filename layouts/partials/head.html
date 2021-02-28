@@ -1,8 +1,9 @@
 {{- $css := resources.Get "scss/main.scss" | resources.ToCSS (dict "targetPath" "style.css" "outputStyle" "compressed" "enableSourceMap" true) -}}
+{{- $img := resources.Get "js/img.js" -}}
 {{- $lunr := resources.Get "js/lunr.js" -}}
 {{- $menu := resources.Get "js/menu.js" -}}
 {{- $search := resources.Get "js/search.js" -}}
-{{- $js := slice $menu $search | resources.Concat "main.js" | js.Build (dict "targetPath" "main.js" "minify" true) -}}
+{{- $js := slice $img $menu $search | resources.Concat "main.js" | js.Build (dict "targetPath" "main.js" "minify" true) -}}
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
