@@ -13,9 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function showOverlay(img) {
     const overlay = document.createElement("div");
     overlay.classList.add("img-overlay");
-    const overlayImg = document.createElement("img");
-    overlayImg.src = img.src;
-    overlay.appendChild(overlayImg);
+    overlay.innerHTML = `<img src="${img.src}" alt="${img.alt}" />`;
     document.body.appendChild(overlay);
     overlay.addEventListener("click", () => {
         document.body.removeChild(overlay);
