@@ -5,9 +5,8 @@
     {{range .Pages}}
         <div class="card">
             <h3><a href="{{.RelPermalink}}">{{.Title}}</a></h3>
-            <small>{{.Date.Format "02. Jan, 2006"}}</small>
             {{if .Description}}
-                <p>{{.Description}}</p>
+                <small>{{.Description}}</small>
             {{end}}
         </div>
     {{end}}

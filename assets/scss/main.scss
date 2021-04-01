@@ -14,24 +14,56 @@ html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
-    --grey-400: #adadad;
-    --grey-500: #858585;
-    --grey-600: #333333;
-    --grey-700: #1f1f1f;
-    --grey-800: #141414;
-    --grey-900: #0a0a0a;
+    --grey-100: #f5f5f5; // 4% #000 on #fff
+    --grey-200: #ebebeb; // 8% #000 on #fff
+    --grey-300: #d6d6d6; // 16% #000 on #fff
+    --grey-400: #adadad; // 32% #000 on #fff
+    --grey-500: #858585; // 48% #000 on #fff
+    --grey-600: #333333; // 80% #000 on #fff
+    --grey-700: #1f1f1f; // 84% #000 on #fff
+    --grey-800: #141414; // 92% #000 on #fff
+    --grey-900: #0a0a0a; // 96% #000 on #fff
 
     --green: #6ece9d;
+    --green-hover: #91dab4;
+    --beige: #faf8f5;
     --yellow: #ffce3d;
     --yellow-hover: #ffe082;
+    --orange: #f7a66b;
     --red: #e87b7b;
+    --blue: #73b1f0;
+
+    &.theme-light {
+        --text-primary: black;
+        --text-primary-hover: var(--grey-600);
+        --text-secondary: var(--grey-500);
+        --text-secondary-hover: var(--grey-400);
+        --background-primary: var(--beige);
+        --background-secondary: var(--grey-900);
+        --background-input: white;
+        --border-primary: var(--grey-300);
+        --box-shadow: 0px 4px 16px rgba(0,0,0,.2);
+    }
+
+    &.theme-dark {
+        --text-primary: white;
+        --text-primary-hover: var(--grey-300);
+        --text-secondary: var(--grey-400);
+        --text-secondary-hover: var(--grey-500);
+        --background-primary: var(--grey-900);
+        --background-secondary: var(--grey-800);
+        --background-input: var(--grey-800);
+        --border-primary: var(--grey-600);
+        --border-secondary: var(--grey-600);
+        --box-shadow: 0px 4px 16px rgba(0,0,0,.6);
+    }
 }
 
 body {
     min-width: 320px;
     margin-right: calc(-100vw + 100%); /* Fix for scroll-bar jump */
-    color: white;
-    background: var(--grey-900);
+    color: var(--text-primary);
+    background: var(--background-primary);
     overflow-x: hidden;
 }
 
@@ -77,10 +109,10 @@ p {
 }
 
 small {
-    color: var(--grey-400);
     font-size: 15px;
     font-weight: 400;
     line-height: 1.5;
+    color: var(--text-secondary);
 }
 
 em {
@@ -103,12 +135,12 @@ a {
     font-size: inherit;
     font-weight: 400;
     text-decoration: none;
-    color: var(--yellow);
+    color: var(--text-primary);
     transition: color .1s ease;
 
     &:hover,
     &:focus {
-        color: var(--yellow-hover);
+        color: var(--text-primary-hover);
     }
 
     img {
@@ -118,23 +150,23 @@ a {
 
 blockquote {
     padding-left: 12px;
-    border-left: 2px solid var(--grey-500);
+    border-left: 2px solid var(--border-primary);
 }
 
 table {
     margin: 0 auto !important;
-    border: 1px solid var(--grey-500);
+    border: 1px solid var(--border-primary);
     border-collapse: separate;
     border-spacing: 0;
     table-layout: fixed;
 
     td, th {
         padding: 8px 12px;
-        border: 1px solid var(--grey-500);
+        border: 1px solid var(--border-primary);
     }
 
     th {
-        background: var(--grey-800);
+        background: var(--background-input);
     }
 }
 
@@ -163,14 +195,14 @@ kbd {
 
 mark {
     padding: 0 4px;
-    background: var(--yellow);
+    background: var(--text-primary);
     border-radius: 4px;
 }
 
 hr {
     height: 1px;
     margin: 24px 0;
-    background-color: var(--grey-500);
+    background-color: var(--border-primary);
     border: none;
 }
 
@@ -220,12 +252,12 @@ header {
         font-size: 24px;
         font-weight: 500;
         letter-spacing: -1px;
-        color: white;
+        color: var(--text-primary);
         white-space: nowrap;
         transition: color .1s ease;
 
         &:hover {
-            color: var(--grey-400);
+            color: var(--text-primary-hover);
             text-decoration: none;
         }
     }
@@ -239,10 +271,10 @@ header {
             a {
                 font-size: 16px;
                 font-weight: 500;
-                color: white;
+                color: var(--text-primary);
 
                 &:hover, &:focus {
-                    color: var(--grey-400);
+                    color: var(--text-primary-hover);
                     text-decoration: none;
                 }
             }
@@ -275,9 +307,7 @@ section.layout {
         h2 {
             margin-bottom: 16px;
             padding: 32px 0 8px;
-            border-width: 0 0 1px 0;
-            border-style: solid;
-            border-color: var(--grey-500);
+            border-bottom: 2px solid var(--border-primary);
         }
 
         h3, h4, h5, h6 {
@@ -287,6 +317,14 @@ section.layout {
 
         p {
             margin: 16px 0;
+
+            a {
+                color: var(--green);
+
+                &:hover, &:focus {
+                    color: var(--green-hover);
+                }
+            }
         }
 
         a > img {
@@ -320,22 +358,36 @@ section.layout {
             list-style-type: disc;
         }
 
+        img {
+            box-shadow: 0 0 0 2px var(--border-secondary);
+        }
+
+        code {
+            padding: 0 4px;
+        }
+
         .card {
             max-width: 512px;
             display: block;
             margin: 24px 0;
             padding: 24px 24px 20px;
-            background-color: var(--grey-800);
+            background-color: var(--background-secondary);
             border-radius: 6px;
 
             h3 {
                 margin: 0;
                 padding: 0 0 8px;
+                color: white;
+
+                a {
+                    color: inherit;
+                }
             }
         
             p, small {
                 margin: 0;
-                padding: 0
+                padding: 0;
+                color: var(--text-secondary);
             }
 
             p:last-of-type {
@@ -388,14 +440,14 @@ section.layout {
             height: 40px;
             width: 100%;
             padding: 8px 36px 8px 12px;
-            color: white;
-            background-color: var(--grey-800);
+            color: var(--text-secondary);
+            background: var(--background-input);
             border-radius: 6px;
-            transition: background-color .1s ease;
+            transition: box-shadow .1s ease;
 
             &:hover,
             &:focus {
-                background-color: var(--grey-700);
+                box-shadow: 0 0 0 2px var(--border-primary);
             }
         }
 
@@ -404,14 +456,14 @@ section.layout {
             right: 12px;
             font-size: 24px;
             line-height: 40px;
-            color: var(--grey-400);
+            color: var(--text-secondary);
             cursor: pointer;
 
             &:hover {
-                color: var(--grey-300);
+                color: var(--text-secondary-hover);
 
                 & + input {
-                    background-color: var(--grey-700);
+                    box-shadow: 0 0 0 2px var(--border-primary);
                 }
             }
         }
@@ -421,8 +473,9 @@ section.layout {
             top: calc(100% + 6px);
             right: 0;
             left: 0;
-            background: var(--grey-700);
+            background: var(--background-input);
             border-radius: 6px;
+            box-shadow: var(--box-shadow);
             z-index: 1;
     
             a, p {
@@ -430,22 +483,14 @@ section.layout {
                 margin: 8px 12px;
                 font-size: 16px;
                 line-height: 1.5;
-                color: white;
-            }
-
-            p {
-                color: var(--grey-500);
-            }
-
-            a:hover {
-                color: var(--grey-400);
+                color: var(--text-secondary);
             }
 
             .active {
-                color: var(--yellow);
+                color: var(--green);
 
                 &:hover, &:focus {
-                    color: var(--yellow-hover);
+                    color: var(--green-hover);
                 }
             }
         }
@@ -460,7 +505,7 @@ section.layout {
             position: relative;
             margin: 0 8px;
             border-top: 4px solid transparent;
-            border-left: 4px solid white;
+            border-left: 4px solid var(--border-primary);
             border-bottom: 4px solid transparent;
             cursor: pointer;
 
@@ -511,19 +556,19 @@ section.layout {
 
         a {
             line-height: 1.5;
-            color: white;
+            color: var(--text-primary);
 
             &:hover, &:focus {
-                color: var(--grey-400);
+                color: var(--text-primary-hover);
             }
         }
     }
 
     .active > .section > a, .active > span > a {
-        color: var(--yellow);
+        color: var(--green);
 
         &:hover, &:focus {
-            color: var(--yellow-hover);
+            color: var(--green-hover);
         }
     }
 
@@ -608,14 +653,14 @@ footer {
     }
 
     a {
-        font-weight: 500;
+        font-size: 14px;
         line-height: 1.2;
-        color: white;
+        color: var(--text-secondary);
         white-space: nowrap;
 
         &:hover,
         &:focus {
-            color: var(--grey-400);
+            color: var(--text-secondary-hover);
             text-decoration: none;
         }
     }

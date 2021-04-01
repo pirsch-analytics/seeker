@@ -1,38 +1,27 @@
 @font-face {
   font-family: "DM Sans";
-  src: url("/fonts/DMSans-Regular.ttf");
+  src: url("/fonts/DM-Sans-Regular.woff2");
   font-weight: 400;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "DM Sans";
-  src: url("/fonts/DMSans-Italic.ttf");
-  font-style: italic;
-  font-weight: 400;
-}
-
-
-@font-face {
-  font-family: "DM Sans";
-  src: url("/fonts/DMSans-Medium.ttf");
+  src: url("/fonts/DM-Sans-Medium.woff2");
   font-weight: 500;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "DM Sans";
-  src: url("/fonts/DMSans-MediumItalic.ttf");
-  font-weight: 500;
-  font-style: italic;
+  src: url("/fonts/DM-Sans-Bold.woff2");
+  font-weight: 700;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "DM Mono";
-  src: url("/fonts/DMMono-Regular.ttf");
+  src: url("/fonts/DM-Mono-Regular.woff2");
   font-weight: 400;
-}
-
-@font-face {
-  font-family: "DM Mono";
-  src: url("/fonts/DMMono-Medium.ttf");
-  font-weight: 500;
+  font-display: swap;
 }
