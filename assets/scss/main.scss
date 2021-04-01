@@ -43,6 +43,10 @@ html {
         --background-input: white;
         --border-primary: var(--grey-300);
         --box-shadow: 0px 4px 16px rgba(0,0,0,.2);
+
+        .show-dark {
+            display: none;
+        }
     }
 
     &.theme-dark {
@@ -56,6 +60,10 @@ html {
         --border-primary: var(--grey-600);
         --border-secondary: var(--grey-600);
         --box-shadow: 0px 4px 16px rgba(0,0,0,.6);
+
+        .show-light {
+            display: none;
+        }
     }
 }
 
@@ -109,7 +117,7 @@ p {
 }
 
 small {
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 400;
     line-height: 1.5;
     color: var(--text-secondary);
@@ -605,30 +613,29 @@ nav {
     }
 }
 
-@media only screen and (min-width: 512px) {
-    body {
-        *::-webkit-scrollbar {
-            height: 16px;
-            width: 16px;
-        }
-    
-        *::-webkit-scrollbar-thumb {
-            height: 64px;
-            width: 64px;
-            background-color: rgba(127,127,127,.5);
-            border: 5px solid rgba(0,0,0,0);
-            background-clip: padding-box;
-            -webkit-border-radius: 8px;
-        }
-        
-        *::-webkit-scrollbar-button {
-            height: 0;
-            width: 0;
-            display: none;
-        }
-        *::-webkit-scrollbar-corner {
-            background-color: transparent;
-        }
+.theme-switch {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    height: 48px;
+    width: 48px;
+    background: var(--green);
+    border-radius: 50%;
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+    transition: background-color .1s ease;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+
+    &:hover, &:focus {
+        background: var(--green-hover);
+    }
+
+    svg {
+        height: 24px;
+        min-width: 24px;
+        width: 24px;
+        stroke: black;
     }
 }
 
@@ -676,5 +683,32 @@ footer {
 
     @media only screen and (max-width: 768px) {
         height: 64px;
+    }
+}
+
+@media only screen and (min-width: 512px) {
+    body {
+        *::-webkit-scrollbar {
+            height: 16px;
+            width: 16px;
+        }
+    
+        *::-webkit-scrollbar-thumb {
+            height: 64px;
+            width: 64px;
+            background-color: rgba(127,127,127,.5);
+            border: 5px solid rgba(0,0,0,0);
+            background-clip: padding-box;
+            -webkit-border-radius: 8px;
+        }
+        
+        *::-webkit-scrollbar-button {
+            height: 0;
+            width: 0;
+            display: none;
+        }
+        *::-webkit-scrollbar-corner {
+            background-color: transparent;
+        }
     }
 }
