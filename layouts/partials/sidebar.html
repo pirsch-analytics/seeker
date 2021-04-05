@@ -25,11 +25,30 @@
     {{end}}
 {{end}}
 
-<div class="menu">
+<nav id="sideBar" class="sidebar">
+    <div class="logo">
+        <a href="/">{{.Site.Params.title}}</a>
+    </div>
     {{partial "search" .}}
     {{if .Site.Home}}
         <ul>
             {{template "tree-node" dict "children" .Site.Home.Pages "page" .}}
         </ul>
     {{end}}
-</div>
+    
+    <footer>
+        <ul>
+            {{range .Site.Menus.footer}}
+                <li>
+                    <a href="{{.URL}}" target="_blank">{{.Name}}</a>
+                </li>
+            {{end}}
+        </ul>
+        {{if .Site.Params.url}}
+        <a href="{{.Site.Params.url}}" target="_blank">{{.Site.Params.copyright}}</a>
+        {{else}}
+            {{.Site.Params.copyright}}
+        {{end}}
+    </footer>
+</nav>
+<div class="cover"></div>

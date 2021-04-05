@@ -1,19 +1,8 @@
+<button id="sideBarToggle" class="sidebar-toggle">
+    <svg id="sideBarOpen" class="menu" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"><path d="M5 18h7m-7-6h14M5 6h14"/></svg>
+    <svg id="sideBarClose" class="menu" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" style="display: none;"><path d="M17 7L7 17m10 0L7 7" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
 <button id="darkModeToggle" class="theme-switch" title="Switch between light and dark mode">
     <svg class="show-dark" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"  stroke-width="2" stroke-linejoin="round"><path d="M12 17a5 5 0 1 0 0-10 5 5 0 1 0 0 10z"/><path d="M5.636 5.636l.707.707M3 12h1m2.343 5.657l-.707.707M12 20v1m5.657-3.343l.707.707M20 12h1m-2.636-6.364l-.707.707M12 3v1" stroke-linecap="round"/></svg>
     <svg class="show-light" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><path d="M12.515 14.242C9.517 11.161 9.017 6.498 11.183 3a8.4 8.4 0 0 0-4.497 2.498 9.2 9.2 0 0 0 0 12.991 9.2 9.2 0 0 0 12.991 0c.5-.5.999-1.082 1.332-1.666-2.998.5-6.162-.333-8.494-2.581z" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round"/></svg>
 </button>
-<footer>
-    {{if .Site.Params.url}}
-        <a href="{{.Site.Params.url}}" target="_blank">{{.Site.Params.copyright}}</a>
-    {{else}}
-        {{.Site.Params.copyright}}
-    {{end}}
-    
-    <ul>
-        {{range .Site.Menus.footer}}
-            <li>
-                <a href="{{.URL}}" target="_blank">{{.Name}}</a>
-            </li>
-        {{end}}
-    </ul>
-</footer>

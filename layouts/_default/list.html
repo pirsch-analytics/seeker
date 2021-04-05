@@ -3,11 +3,11 @@
     <small>{{.Date.Format "02. Jan, 2006"}}</small>
     {{.Content}}
     {{range .Pages}}
-        <div class="card">
-            <h3><a href="{{.RelPermalink}}">{{.Title}}</a></h3>
+        <a href="{{.RelPermalink}}" class="card">
+            <h3>{{.Title}}</h3>
             {{if .Description}}
                 <small>{{.Description}}</small>
             {{end}}
-        </div>
+        </a>
     {{end}}
 {{end}}
