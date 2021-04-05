@@ -326,6 +326,8 @@ nav.sidebar {
     user-select: none;
     overflow-y: auto;
     z-index: 100;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 
     .logo {
         height: 32px;
@@ -499,7 +501,7 @@ nav.sidebar {
 }
 
 .cover {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
