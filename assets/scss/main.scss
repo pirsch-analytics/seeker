@@ -519,6 +519,10 @@ nav.sidebar {
     line-height: 1.5;
     cursor: default;
 
+    a {
+        white-space: nowrap;
+    }
+
     span {
         margin: 0 4px;
         color: var(--text-secondary);

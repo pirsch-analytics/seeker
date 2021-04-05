@@ -23,4 +23,44 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
     }
+
+    let sideBar = document.getElementById("sideBar");
+    let sideBarToggle = document.getElementById("sideBarToggle");
+    let sideBarOpen = document.getElementById("sideBarOpen");
+    let sideBarClose = document.getElementById("sideBarClose");
+
+    if(sideBarClose) {
+        sideBarClose.style.display = "none";
+    }
+
+    function toggleSideBar(ignoreIfClosed) {
+        let visible = sideBar.classList.contains("open");
+
+        if(ignoreIfClosed && !visible) {
+            return;
+        }
+
+        sideBarOpen.style.display = visible ? "" : "none";
+        sideBarClose.style.display = visible ? "none" : "";
+
+        if(visible) {
+            sideBar.classList.remove("open");
+        } else {
+            sideBar.classList.add("open");
+        }
+    }
+
+    if(sideBarToggle) {
+        sideBarToggle.addEventListener("click", e => {
+            e.preventDefault();
+            e.stopPropagation();
+            toggleSideBar();
+        });
+    }
+
+    document.addEventListener("click", e => {
+        if(sideBar && !sideBar.contains(e.target)) {
+            toggleSideBar(true);
+        }
+    });
 });
