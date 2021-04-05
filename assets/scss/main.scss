@@ -520,11 +520,12 @@ nav.sidebar {
     cursor: default;
 
     a {
+        margin-right: 4px;
         white-space: nowrap;
     }
 
     span {
-        margin: 0 4px;
+        margin-right: 4px;
         color: var(--text-secondary);
     }
 }
