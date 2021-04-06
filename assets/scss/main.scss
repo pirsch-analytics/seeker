@@ -152,6 +152,7 @@ a {
 
     img {
         width: auto;
+        cursor: pointer;
     }
 }
 
@@ -224,7 +225,10 @@ hr {
     align-items: center;
     justify-content: center;
     background: rgba(0,0,0,.5);
+    backdrop-filter: blur(8px);
     cursor: zoom-out;
+    z-index: 1000;
+    backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
 
     .img-overlay-content {
