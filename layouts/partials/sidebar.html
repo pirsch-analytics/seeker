@@ -35,20 +35,6 @@
             {{template "tree-node" dict "children" .Site.Home.Pages "page" .}}
         </ul>
     {{end}}
-    
-    <footer>
-        <ul>
-            {{range .Site.Menus.footer}}
-                <li>
-                    <a href="{{.URL}}" target="_blank">{{.Name}}</a>
-                </li>
-            {{end}}
-        </ul>
-        {{if .Site.Params.url}}
-        <a href="{{.Site.Params.url}}" target="_blank">{{.Site.Params.copyright}}</a>
-        {{else}}
-            {{.Site.Params.copyright}}
-        {{end}}
-    </footer>
+    {{partial "footer" .}}
 </nav>
 <div class="cover"></div>
