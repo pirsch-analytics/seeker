@@ -27,9 +27,6 @@ document.addEventListener('DOMContentLoaded', function() {
         darkModeToggle.addEventListener("click", e => {
             e.preventDefault();
             e.stopPropagation();
-
-            console.log("test")
-            
             darkMode = localStorage.getItem("darkMode"); 
             
             if (darkMode !== "enabled") {
