@@ -27,7 +27,7 @@
 
 <nav id="sideBar" class="sidebar">
     <div class="logo">
-        <a href="/">{{.Site.Params.title}}</a>
+        <a href="{{.Site.BaseURL}}">{{.Site.Params.title}}</a>
     </div>
     {{partial "search" .}}
     {{if .Site.Home}}
