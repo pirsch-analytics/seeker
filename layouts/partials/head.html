@@ -4,7 +4,7 @@
 {{- $img := resources.Get "js/img.js" -}}
 {{- $menu := resources.Get "js/menu.js" -}}
 {{- $search := resources.Get "js/search.js" -}}
-{{- $js := slice $theme $img $menu $search | resources.Concat "main.js" | js.Build (dict "targetPath" "main.js" "minify" true) -}}
+{{- $js := slice $theme $img $menu ($search | resources.ExecuteAsTemplate "search.js" .) | resources.Concat "main.js" | js.Build (dict "targetPath" "main.js" "minify" true) -}}
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />

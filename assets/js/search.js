@@ -139,7 +139,7 @@ function performSearch(term) {
 
 function loadIndex() {
     var request = new XMLHttpRequest();
-    request.open("GET", "/search.json");
+    request.open("GET", "{{.Site.BaseURL}}search.json");
     request.responseType = "json";
     request.addEventListener("load", () => {
         lookup = {};
