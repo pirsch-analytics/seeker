@@ -6,11 +6,12 @@
 {{- $search := resources.Get "js/search.js" -}}
 {{- $js := slice $theme $img $menu ($search | resources.ExecuteAsTemplate "search.js" .) | resources.Concat "main.js" | js.Build (dict "targetPath" "main.js" "minify" true) -}}
 <head>
+    <base href="{{.Site.BaseURL}}" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     {{hugo.Generator}}
     <link rel="stylesheet" type="text/css" href="{{$css.RelPermalink}}" />
-    <link rel="shortcut icon" type="image/png" href="/favicon.png" />
+    <link rel="shortcut icon" type="image/png" href="{{.Site.BaseURL}}favicon.png" />
     <title>
         {{- .Page.Title -}}
         {{if .Site.Params.title}} ‒ {{end}}
