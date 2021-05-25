@@ -1,5 +1,5 @@
 {{if .TableOfContents}}
-    {{.TableOfContents}}
+    {{replace .TableOfContents `href="#` (printf `href="%s#` .Permalink) | safeHTML}}
 {{else}}
     <nav id="TableOfContents"></nav>
 {{end}}
