@@ -113,6 +113,7 @@ p {
     font-size: 18px;
     line-height: 1.8;
     font-weight: 400;
+    color: var(--text-secondary);
 }
 
 small {
@@ -162,7 +163,7 @@ blockquote {
 }
 
 table {
-    margin: 0 auto !important;
+    margin: 32px auto !important;
     border: 1px solid var(--border-primary);
     border-collapse: separate;
     border-spacing: 0;
@@ -592,6 +593,7 @@ section.layout {
             margin: 8px 0;
             font-size: 18px;
             line-height: 1.5;
+            color: var(--text-secondary);
         }
         
         ol {
@@ -691,10 +693,10 @@ nav#TableOfContents {
         }
 
         a {
-            color: var(--text-secondary);
+            color: var(--green);
 
             &:hover, &:focus {
-                color: var(--text-secondary-hover);
+                color: var(--green-hover);
             }
         }
     }
