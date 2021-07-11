@@ -1,5 +1,5 @@
 [
-    {{- range $index, $page := .Site.RegularPages -}}
+    {{- range $index, $page := .Site.Pages -}}
         {{- if gt $index 0 -}} , {{- end -}}
         {{- $entry := dict "uri" $page.RelPermalink "title" $page.Title -}}
         {{- $entry = merge $entry (dict "content" ($page.Plain | htmlUnescape)) -}}
