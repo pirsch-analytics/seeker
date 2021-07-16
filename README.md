@@ -28,6 +28,10 @@ To change the title, copyright texts, and copyright URL, set these parameters in
     title = "Title"
     copyright = "Copyright"
     url = "https://example.com/"
+    titleColor = "#ffffff"
+    themeColor = "#000000"
+    twitter = "@PirschAnalytics"
+    twitterCard = "product"
 ```
 
 ### Navigation

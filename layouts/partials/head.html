@@ -9,36 +9,22 @@
     <base href="{{.Site.BaseURL}}" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="msapplication-TileColor" content="{{.Site.Params.titleColor}}" />
+    <meta name="theme-color" content="{{.Site.Params.themeColor}}" />
+    <meta name="twitter:card" content="{{.Site.Params.twitterCard}}" />
+    <meta name="twitter:site" content="{{.Site.Params.twitter}}" />
+    <meta name="twitter:title" content="{{.Title}} ‒ {{.Site.Title}}" />
+    {{if .Params.description}}<meta name="twitter:description" content="{{.Params.description}}" />{{end}}
+    <meta name="twitter:image" content="{{.Site.BaseURL}}/twitter-card.png" />
+    <meta property="og:url" content="{{.Permalink}}" />
+    <meta property="og:title" content="{{.Title}} ‒ {{.Site.Title}}" />
+    {{if .Params.description}}<meta property="og:description" content="{{.Params.description}}" />{{end}}
+    <meta property="og:image" content="{{.Site.BaseURL}}/twitter-card.png" />
+    <meta property="og:type" content="article" />
+    <meta property="og:updated_time" content="{{.Lastmod.Format "2006-01-02"}}" />
+    <meta property="article:updated_time" content="{{.Lastmod.Format "2006-01-02"}}" />
+    <meta property="article:published_time" content="{{.Date.Format "2006-01-02"}}" />
     {{hugo.Generator}}
-
-    {{/* Title meta tags */}}
-    <meta property="og:title" content="{{ .Title }} | {{ .Site.Title }}" />
-    <meta name="twitter:title" content="{{ .Title }} | {{ .Site.Title }}" />
-    <meta itemprop="name" content="{{ .Title }} | {{ .Site.Title }}" />
-    <meta name="application-name" content="{{ .Title }} | {{ .Site.Title }}" />
-    <meta property="og:site_name" content="docs.pirsch.io" />
-
-    {{/* Description meta tags */}}
-    <meta name="description" content="{{ .Params.description }} | {{ .Site.Title }}" />
-    <meta itemprop="description" content="{{ .Params.description }} | {{ .Site.Title }}" />
-    <meta property="og:description" content="{{ .Params.description }} | {{ .Site.Title }}" />
-    <meta name="twitter:description" content="{{ .Params.description }} | {{ .Site.Title }}" />
-
-    {{/* Link mata tags */}}
-    <link rel="canonical" href="{{ .Permalink }}" itemprop="url" /> 
-    <meta name="url" content="{{ .Permalink }}" />
-    <meta name="twitter:url" content="{{ .Permalink }}" /> 
-    <meta property="og:url" content="{{ .Permalink }}" />
-
-    {{/* Language mata tag */}}
-    <meta property="og:locale" content="en_US">
-
-    {{/* Time meta tag */}}
-    <meta property="og:updated_time" content={{ .Lastmod.Format "2006-01-02T15:04:05Z0700" | safeHTML }} />
-
-    {{/* Include sitemap for better crawling/indexing of the website */}}
-    <link rel="sitemap" type="application/xml" title="Sitemap" href="{{ .Site.BaseURL }}sitemap.xml" /> 
-
     <link rel="stylesheet" type="text/css" href="{{$css.RelPermalink}}" />
     <link rel="shortcut icon" type="image/png" href="{{.Site.BaseURL}}favicon.png" />
     <title>
